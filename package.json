@@ -1,0 +1,19 @@
+{
+  "name": "mysql-crud-app",
+  "version": "1.0.0",
+  "description": "Sample CRUD app with MySQL and node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Birlem",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.1.1-alpha.3",
+    "mysql": "^2.16.0",
+    "req-flash": "0.0.3"
+  }
+}

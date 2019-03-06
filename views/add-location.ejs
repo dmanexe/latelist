@@ -1,0 +1,44 @@
+<% include partials/header.ejs %>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+        <form class="add-spot-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="spot_title" id="spot_title" placeholder="Name this spot, i.e.: 'Starbucks'" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="spot_address" id="spot_address" placeholder="What's the address? Include the full address, including the country, please!" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="spot_username" id="spot_username" placeholder="What's their twitter username?" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="spot_locale" id="spot_locale" placeholder="Type de for Germany/Austria and en for US" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="spot_description" id="spot_description" placeholder="Give us some more details" required>
+                </div>
+                <!-- <div class="form-group col-md-6">
+                    <select id="position" name="position" class="form-control" required>
+                        <option selected disabled>Choose position</option>
+                        <option>Goalkeeper</option>
+                        <option>Defender</option>
+                        <option>Midfielder</option>
+                        <option>Forward</option>
+                    </select> -->
+                </div>
+                <div class="col-md-12">
+                    <label for="spot-img"><b>Spot Image</b></label><br>
+                    <input type="file" name="image" id="spot-img" class="" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Add Spot</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
