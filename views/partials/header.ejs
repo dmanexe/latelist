@@ -5,8 +5,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <% // CSS: Bootstrap  %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!--<link rel="stylesheet" href="/assets/css/custom.css">-->
+    <% // <link rel="stylesheet" href="/assets/css/custom.css"> %>
+
+    <% // JS: Bootstrap + Popper.js + jQuery %>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title><%= title %></title>
 </head>
 <style>
@@ -25,7 +32,29 @@
 </style>
 <body>
 <div class="page-wrapper">
-    <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1" ><a href="/">Socka Players</a></span>
-        <a class="float-right" href="/add" title="Add a New Player">Add a Player</a>
-    </nav>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">LateList</a>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">Menu</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="/add">Add Spot</a>
+                                <a class="dropdown-item" href="#">Map</a>
+                                <a class="dropdown-item" href="#">Account</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/contact">Contact Us</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline float-right">
+                        <input class="form-control mr-sm-2" type="text" />
+                        <button class="btn btn-primary my-2 my-sm-0" type="submit">
+                            Search
+                        </button>
+                    </form>
+                </div>
+            </nav>

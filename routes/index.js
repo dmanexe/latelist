@@ -14,4 +14,10 @@ module.exports = {
             });
         });
     },
+    getContactPage: (req, res) => {
+        res.render("contact.ejs", {
+            title: "LateList | Contact Us",
+            message: ''
+        });
+    }
 };
