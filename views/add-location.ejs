@@ -1,33 +1,59 @@
 <% include partials/header.ejs %>
     <div class="container">
+        <h2>Add Spot</h2>
+        <hr class="col-xs-12">
         <% if (message != '') { %>
             <p class="text-center text-danger"><%= message %></p>
         <% } %>
         <form class="add-spot-form" action="" method="post" enctype="multipart/form-data">
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <input type="text" class="form-control" name="spot_title" id="spot_title" placeholder="Name this spot, i.e.: 'Starbucks'" required>
+                    <input type="text" class="form-control" name="spot_title" id="spot_title" placeholder="What's it called?" required>
                 </div>
                 <div class="form-group col-md-4">
-                    <input type="text" class="form-control" name="spot_address" id="spot_address" placeholder="What's the address? Include the full address, including the country, please!" required>
+                    <input type="text" class="form-control" name="spot_address" id="spot_address" placeholder="Full Address" required>
                 </div>
                 <div class="form-group col-md-4">
-                    <input type="text" class="form-control" name="spot_username" id="spot_username" placeholder="What's their twitter username?" required>
+                    <input type="text" class="form-control" name="spot_username" id="spot_username" placeholder="Twitter @username" required>
                 </div>
             </div>
+
+            <% // =============================================== %>
+
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control" name="spot_locale" id="spot_locale" placeholder="Type de for Germany/Austria and en for US" required>
+                    <input type="text" class="form-control" name="spot_locale" id="spot_locale" placeholder="What is it? Restaurant, park, etc." required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control" name="spot_description" id="spot_description" placeholder="Give us some more details" required>
+                    <input type="text" class="form-control" name="spot_description" id="spot_description" placeholder="Give us some more details..." required>
                 </div>
+            </div>
+
+            <% // =============================================== %>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="spot_lat" id="spot_lat" placeholder="Spot Latitude" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="spot_long" id="spot_long" placeholder="Spot Longitude" required>
+                </div>
+            </div>
+
+            <% // =============================================== %>
+
+            <div class="form-row">
                 <div class="col-md-12">
                     <label for="spot-img"><b>Spot Image</b></label><br>
                     <input type="file" name="image" id="spot-img" class="" required>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary float-right">Add Spot</button>
+
+            <hr class="col-xs-12">
+
+            <% // =============================================== %>
+
+            <button type="submit" class="btn btn-primary float-left">Add Spot</button>
         </form>
     </div>
 </div>

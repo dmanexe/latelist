@@ -3,7 +3,7 @@ const fs = require('fs');
 module.exports = {
     addSpotPage: (req, res) => {
         res.render("add-location.ejs", {
-            title: "LateList | New Spot",
+            title: "LateList | Add New Spot",
             message: ''
         });
     },
@@ -11,22 +11,22 @@ module.exports = {
         if (!req.files) {
             return res.status(400).send("No files were uploaded.");
         }
-        /*
+
+        /* Use these variables to change edit/delete parameters */
+
         let message = '';
-        let first_name = req.body.first_name;
-        let last_name = req.body.last_name;
-        let position = req.body.position;
-        let number = req.body.number;
-        let username = req.body.username;
-        */
-        let message = '';
-        let uploadedFile = req.files.image;
-        let image_name = uploadedFile.name;
+
         let spot_title = req.body.spot_title;
         let spot_address = req.body.spot_address;
         let spot_locale = req.body.spot_locale;
         let spot_description = req.body.spot_description;
         let spot_username = req.body.spot_username;
+
+        let spot_lat = req.body.spot_lat;
+        let spot_long = req.body.spot_long;
+
+        let uploadedFile = req.files.image;
+        let image_name = uploadedFile.name;
         let fileExtension = uploadedFile.mimetype.split('/')[1];
         image_name = spot_username + '.' + fileExtension;
 
@@ -43,18 +43,16 @@ module.exports = {
                     message
                 });
             } else {
-                // check the filetype before uploading it
+                // checks the filetype before uploading it
                 if (uploadedFile.mimetype === 'image/png' || uploadedFile.mimetype === 'image/jpeg' || uploadedFile.mimetype === 'image/gif') {
-                    // upload the file to the /public/assets/img directory
+                    // uploads the file to the /public/assets/img directory
                     uploadedFile.mv(`public/assets/img/${image_name}`, (err ) => {
                         if (err) {
                             return res.status(500).send(err);
                         }
-                        // send the spot's details to the database
-                        //let query = "INSERT INTO `locations` (first_name, last_name, position, number, image, user_name) VALUES ('" +
-                            //first_name + "', '" + last_name + "', '" + position + "', '" + number + "', '" + image_name + "', '" + username + "')";
-                        let query = "INSERT INTO `spots` (spot_title, spot_address, spot_locale, spot_description, spot_username, image) VALUES ('" +
-                            spot_title + "', '" + spot_address + "', '" + spot_locale + "', '" + spot_description + "', '" + spot_username + "', '" + image_name + "')";
+
+                        // TODO: Clean this nightmare of a query up...    
+                        let query = "INSERT INTO `spots` (spot_title, spot_username, spot_address, spot_locale, spot_description, spot_lat, spot_long, image) VALUES ('" + spot_title + "', '" + spot_username + "', '" + spot_address + "', '" + spot_locale + "', '" + spot_description + "', '" + spot_lat + "', '" + spot_long + "', '" + image_name + "')";
 
                         db.query(query, (err, result) => {
                             if (err) {
@@ -67,7 +65,7 @@ module.exports = {
                     message = "Invalid File format. Only 'gif', 'jpeg' and 'png' images are allowed.";
                     res.render('add-location.ejs', {
                         message,
-                        title: "LateList | New Spot"
+                        title: "LateList | Add New Spot"
                     });
                 }
             }
@@ -88,24 +86,28 @@ module.exports = {
         });
     },
     editSpot: (req, res) => {
-        /* let playerId = req.params.id;
-        let first_name = req.body.first_name;
-        let last_name = req.body.last_name;
-        let position = req.body.position;
-        let number = req.body.number; */
 
-        //let uploadedFile = req.files.image;
-        //let image_name = uploadedFile.name;
-        
+        /* Always updated from addSpot up above */
+
         let spotId = req.params.id;
+
         let spot_title = req.body.spot_title;
         let spot_address = req.body.spot_address;
         let spot_locale = req.body.spot_locale;
         let spot_description = req.body.spot_description;
         let spot_username = req.body.spot_username;
 
-        let query = "UPDATE `spots` SET `spot_title` = '" + spot_title + "', `spot_address` = '" + spot_address + 
-            "', `spot_locale` = '" + spot_locale + "', `spot_description` = '" + spot_description + "' WHERE `spots`.`id` = '" + spotId + "'";
+        let spot_lat = req.body.spot_lat;
+        let spot_long = req.body.spot_long;
+
+        let uploadedFile = req.files.image;
+        let image_name = uploadedFile.name;
+        let fileExtension = uploadedFile.mimetype.split('/')[1];
+        image_name = spot_username + '.' + fileExtension;
+
+        // TODO: Test this
+        let query = "UPDATE `spots` SET `spot_title` = '" + spot_title + "', `spot_address` = '" + spot_address + "', `spot_locale` = '" + spot_locale + "', `spot_description` = '" + spot_description + "', `spot_lat` = '" + spot_lat + "', `spot_long` = '" + spot_long + "' WHERE `spots`.`id` = '" + spotId + "'";
+
         db.query(query, (err, result) => {
             if (err) {
                 return res.status(500).send(err);
