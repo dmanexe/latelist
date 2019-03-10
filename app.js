@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 
 const {getHomePage, getContactPage} = require('./routes/index');
-const {addSpotPage, addSpot, deleteSpot, editSpot, editSpotPage} = require('./routes/location');
+const {addSpotPage, addSpot, deleteSpot, editSpot, editSpotPage} = require('./routes/spot');
 const port = 5000;
 
 // create connection to database

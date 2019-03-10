@@ -1,0 +1,63 @@
+<% include partials/header.ejs %>
+    <div class="container">
+        <h2>Add Spot</h2>
+        <hr class="col-xs-12">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+        <form class="add-spot-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>Title</label>
+                    <input type="text" class="form-control" name="spot_title" id="spot_title" placeholder="Ex: Starbucks" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Full Address</label>
+                    <input type="text" class="form-control" name="spot_address" id="spot_address" placeholder="Ex: 123 Main Street, New York, NY" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Twitter Username</label>
+                    <input type="text" class="form-control" name="spot_username" id="spot_username" placeholder="Ex: starbucks" required>
+                </div>
+            </div>
+
+            <% // =============================================== %>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>Location Type</label>
+                    <input type="text" class="form-control" name="spot_locale" id="spot_locale" placeholder="Ex: Cafe" required>
+                </div>
+                <div class="form-group col-md-8">
+                    <label>Additional Details</label>
+                    <input type="text" class="form-control" name="spot_description" id="spot_description" placeholder="Ex: Indoor seating. Located at the subway stop, by the park" required>
+                </div>
+            </div>
+
+            <% // =============================================== %>
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label>Latitude</label>
+                    <input type="text" class="form-control" name="spot_lat" id="spot_lat" placeholder="Ex: " required>
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Longitude</label>
+                    <input type="text" class="form-control" name="spot_long" id="spot_long" placeholder="Ex: " required>
+                </div>
+                <div class="col-md-8">
+                    <label for="spot-img"><b>Spot Image</b></label><br>
+                    <input type="file" name="image" id="spot-img" class="" required>
+                </div>
+            </div>
+
+            <hr class="col-xs-12">
+
+            <% // =============================================== %>
+
+            <button type="submit" class="btn btn-primary float-left">Add Spot</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

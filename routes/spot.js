@@ -2,7 +2,7 @@ const fs = require('fs');
 
 module.exports = {
     addSpotPage: (req, res) => {
-        res.render("add-location.ejs", {
+        res.render("add-spot.ejs", {
             title: "LateList | Add New Spot",
             message: ''
         });
@@ -38,7 +38,7 @@ module.exports = {
             }
             if (result.length > 0) {
                 message = 'Spot name already exists.';
-                res.render('add-location.ejs', {
+                res.render('add-spot.ejs', {
                     title: "LateList | Add New Spot",
                     message
                 });
@@ -63,7 +63,7 @@ module.exports = {
                     });
                 } else {
                     message = "Invalid File format! Only 'gif', 'jpeg' and 'png' images are allowed.";
-                    res.render('add-location.ejs', {
+                    res.render('add-spot.ejs', {
                         message,
                         title: "LateList | Add New Spot"
                     });
@@ -78,7 +78,7 @@ module.exports = {
             if (err) {
                 return res.status(500).send(err);
             }
-            res.render('edit-location.ejs', {
+            res.render('edit-spot.ejs', {
                 title: "LateList | Edit Spot",
                 spot: result[0],
                 message: ''
