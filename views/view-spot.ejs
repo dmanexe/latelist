@@ -7,13 +7,14 @@
     	<hr class="col-xs-12">
 
 	    <div class="form-row">
-	        <div class="form-group col-md-4"><strong>Address</strong><br/><%= spot.spot_address %></div>
+	        <div class="form-group col-md-4"><strong>Address</strong><br/><a href="https://www.google.com/maps/?q=<%= spot.spot_address %>"><%= spot.spot_address %></a></div>
 	        <div class="form-group col-md-4"><strong>Location Type</strong><br/><%= spot.spot_locale %></div>
 	        <div class="form-group col-md-4"><strong>Additional Info</strong><br/><%= spot.spot_description %></div>
 	    </div>
 	    <div class="form-row">
-	    	<div class="form-group col-md-2"><strong>Longitude</strong><br/><%= spot.spot_longitude %></div>
-	    	<div class="form-group col-md-2"><strong>Latitude</strong><br/><%= spot.spot_latitude %></div>
+	    	<div class="form-group col-md-2"><strong>GPS Location</strong><br/><a href="https://www.google.com/maps/?q=<%= spot.spot_long %>,<%= spot.spot_lat %>"><%= spot.spot_long %>, <%= spot.spot_lat %></a>
+	    	</div> 
+    	</div>
     </div>
 </div>
 </body>
