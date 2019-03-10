@@ -41,7 +41,7 @@ app.use(fileUpload()); // configure fileupload
 // GETs
 app.get('/', getHomePage);
 app.get('/add', addSpotPage);
-app.get('/view', viewSpot);
+app.get('/view/:id', viewSpot);
 app.get('/edit/:id', editSpotPage);
 app.get('/delete/:id', deleteSpot);
 app.get('/contact', getContactPage);

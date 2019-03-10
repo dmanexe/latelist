@@ -14,16 +14,16 @@
                                 <th scope="col">Image</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Address</th>
-                                <th scope="col">Locale</th>
+                                <th scope="col">Type</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Twitter</th>
-                                <th scope="col">Actions</th>
+                                <th scope="col">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody><% spots.forEach((spot, index) => { %>
                             <tr>
                                 <th scope="row">
-                                    <a href="/view/<%= spot.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-primary">View
+                                    <a href="/view/<%= spot.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-primary"><i class="fas fa-info-circle"></i> View
                                 </th>
                                 <td>
                                     <img src="/assets/img/<%= spot.image %>" class="rounded-circle spot-img" alt="">
@@ -44,8 +44,8 @@
                                     <a href="https://www.twitter.com/<%= spot.spot_username %>">@<%= spot.spot_username %></a>
                                 </td>
                                 <td>
-                                    <a href="/edit/<%= spot.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-info">Edit</a>
-                                    <a href="/delete/<%= spot.id %>" class="btn btn-sm btn-danger">Delete</a>
+                                    <a href="/edit/<%= spot.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a>
+                                    <a href="/delete/<%= spot.id %>" class="btn btn-sm btn-danger"><i class="fas fa-minus-circle"></i> Delete</a>
                                 </td>
                             </tr><% }) %>
                             <tr>
