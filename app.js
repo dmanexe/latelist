@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 
 const {getHomePage, getContactPage} = require('./routes/index');
-const {addSpotPage, addSpot, deleteSpot, editSpot, editSpotPage} = require('./routes/spot');
+const {addSpotPage, addSpot, deleteSpot, editSpot, editSpotPage, viewSpot} = require('./routes/spot');
 const port = 5000;
 
 // create connection to database
@@ -41,6 +41,7 @@ app.use(fileUpload()); // configure fileupload
 // GETs
 app.get('/', getHomePage);
 app.get('/add', addSpotPage);
+app.get('/view', viewSpot);
 app.get('/edit/:id', editSpotPage);
 app.get('/delete/:id', deleteSpot);
 app.get('/contact', getContactPage);

@@ -10,7 +10,7 @@
                     <table class="table table-hovered">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">ID</th>
+                                <th scope="col">&nbsp;</th>
                                 <th scope="col">Image</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Address</th>
@@ -23,10 +23,10 @@
                         <tbody><% spots.forEach((spot, index) => { %>
                             <tr>
                                 <th scope="row">
-                                    <%= spot.id %>
+                                    <a href="/view/<%= spot.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-primary">View
                                 </th>
                                 <td>
-                                    <img src="/assets/img/<%= spot.image %>" class="rounded-circle player-img" alt="">
+                                    <img src="/assets/img/<%= spot.image %>" class="rounded-circle spot-img" alt="">
                                 </td>
                                 <td>
                                     <%= spot.spot_title %>

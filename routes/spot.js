@@ -116,6 +116,20 @@ module.exports = {
             res.redirect('/'); 
         })
     },
+    viewSpot: (req,res) => {
+        let spotId = req.params.id;
+        let query = "SELECT * FROM `spots` WHERE id = '" + spotId + "' ";
+        db.query(query, (err, result) => {
+            if (err) {
+                return res.status(500).send(err);
+            }
+            res.render('view-spot.ejs', {
+                title: "LateList | View Spot",
+                spot: result[0],
+                message: ''
+            });
+        });
+    },
     deleteSpot: (req, res) => {
         let spotId = req.params.id;
         let getImageQuery = 'SELECT image from `spots` WHERE id = "' + spotId + '"';
