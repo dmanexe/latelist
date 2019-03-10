@@ -16,6 +16,12 @@ Make sure you update `app.js` with your local MySQL settings. The settings in th
 
 # Credits
 
-Atauba Prince - (github)[http://github.com/achowba] - (dev.to)[https://dev.to/achowba] - (Original source code)[https://dev.to/achowba/build-a-simple-app-using-node-js-and-mysql-19me]
-
-(Bootstrap)[https://getbootstrap.com/]
+1. Atauba Prince  [@achowba > github](http://github.com/achowba) 
+2. [Inspiration Project Code](https://dev.to/achowba/build-a-simple-app-using-node-js-and-mysql-19me)
+2. [Bootstrap](https://getbootstrap.com/)
+3. [body-parser](https://www.npmjs.com/package/body-parser)
+4. [ejs](https://www.npmjs.com/package/ejs)
+5. [express](https://www.npmjs.com/package/express)
+6. [express-fileupload](https://www.npmjs.com/package/express-fileupload)
+7. [mysql](https://www.npmjs.com/package/mysql)
+8. [req-flash](https://www.npmjs.com/package/req-flash)
