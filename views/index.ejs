@@ -5,7 +5,7 @@
 
             <div class="jumbotron">
                 <h2>What is LateList?</h2>
-                <p>We are some folks who seek something to do at any particular hour of the day. Welcome to <strong>LateList</strong>, our curated list of 24-hour locations across the planet.</p>
+                <p>This is a simple Node.js + MySQL app to show beginners how to get started with a simple CRUD application in Node.js.</p>
                 <div class="table-wrapper"><% if (spots.length > 0) {%>
                     <table class="table table-hovered">
                         <thead class="thead-dark">
@@ -16,7 +16,7 @@
                                 <th scope="col">Address</th>
                                 <th scope="col">Locale</th>
                                 <th scope="col">Description</th>
-                                <th scope="col">Username</th>
+                                <th scope="col">Twitter</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
@@ -35,7 +35,7 @@
                                     </td>
                                     <td><%= spot.spot_description %>
                                     </td>
-                                    <td>@<%= spot.spot_username %>
+                                    <td><a href="https://www.twitter.com/<%= spot.spot_username %>">@<%= spot.spot_username %></a>
                                     </td>
                                     <td>
                                         <a href="/edit/<%= spot.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit

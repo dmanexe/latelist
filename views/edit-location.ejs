@@ -6,7 +6,43 @@
 
     <% if (spot) { %>
         <form class="add-player-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="spot_title" id="spot_title" value="<%= spot.spot_title %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="spot_address" id="spot_address" value="<%= spot.spot_address %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="spot_username" id="spot_username" value="<%= spot.spot_username %>" required>
+                </div>
+            </div>
 
+            <% // =============================================== %>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="spot_locale" id="spot_locale" value="<%= spot.spot_locale %>" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="spot_description" id="spot_description" value="<%= spot.spot_description %>" required>
+                </div>
+            </div>
+
+            <% // =============================================== %>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="spot_lat" id="spot_lat" value="<%= spot.spot_lat %>" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="spot_long" id="spot_long" value="<%= spot.spot_long %>" required>
+                </div>
+            </div>
+
+            <hr class="col-xs-12">
+
+            <% // =============================================== %>
 
             <button type="submit" class="btn btn-success float-right">Update Spot</button>
         </form>
@@ -16,4 +52,4 @@
 </div>
 </div>
 </body>
-</html>
+</html> 

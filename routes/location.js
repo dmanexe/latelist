@@ -9,7 +9,7 @@ module.exports = {
     },
     addSpot: (req, res) => {
         if (!req.files) {
-            return res.status(400).send("No files were uploaded.");
+            return res.status(400).send("No files were uploaded!");
         }
 
         /* Use these variables to change edit/delete parameters */
@@ -37,9 +37,9 @@ module.exports = {
                 return res.status(500).send(err);
             }
             if (result.length > 0) {
-                message = 'Spot name already exists';
+                message = 'Spot name already exists.';
                 res.render('add-location.ejs', {
-                    title: "LateList | New Spot",
+                    title: "LateList | Add New Spot",
                     message
                 });
             } else {
@@ -62,7 +62,7 @@ module.exports = {
                         });
                     });
                 } else {
-                    message = "Invalid File format. Only 'gif', 'jpeg' and 'png' images are allowed.";
+                    message = "Invalid File format! Only 'gif', 'jpeg' and 'png' images are allowed.";
                     res.render('add-location.ejs', {
                         message,
                         title: "LateList | Add New Spot"
@@ -79,7 +79,7 @@ module.exports = {
                 return res.status(500).send(err);
             }
             res.render('edit-location.ejs', {
-                title: "Edit Spot",
+                title: "LateList | Edit Spot",
                 spot: result[0],
                 message: ''
             });
@@ -100,10 +100,10 @@ module.exports = {
         let spot_lat = req.body.spot_lat;
         let spot_long = req.body.spot_long;
 
-        let uploadedFile = req.files.image;
-        let image_name = uploadedFile.name;
-        let fileExtension = uploadedFile.mimetype.split('/')[1];
-        image_name = spot_username + '.' + fileExtension;
+        // let uploadedFile = req.files.image;
+        // let image_name = uploadedFile.name;
+        // let fileExtension = uploadedFile.mimetype.split('/')[1];
+        // image_name = spot_username + '.' + fileExtension;
 
         // TODO: Test this
         let query = "UPDATE `spots` SET `spot_title` = '" + spot_title + "', `spot_address` = '" + spot_address + "', `spot_locale` = '" + spot_locale + "', `spot_description` = '" + spot_description + "', `spot_lat` = '" + spot_lat + "', `spot_long` = '" + spot_long + "' WHERE `spots`.`id` = '" + spotId + "'";
@@ -112,8 +112,9 @@ module.exports = {
             if (err) {
                 return res.status(500).send(err);
             }
-            res.redirect('/');
-        });
+
+            res.redirect('/'); 
+        })
     },
     deleteSpot: (req, res) => {
         let spotId = req.params.id;
