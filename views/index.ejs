@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-12">
 
-            <div class="jumbotron">
+            <div class="jumbotron mt-3">
                 <h1>Hello, world!</h1>
                 <p>This is a simple sample of Node.js &amp; MySQL CRUD for a jumping off point to get into Node.js.</p>
                 <div class="table-wrapper"><% if (spots.length > 0) {%>
@@ -17,6 +17,7 @@
                                 <th scope="col">Type</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Twitter</th>
+                                <th scope="col">&nbsp;</th>
                                 <th scope="col">&nbsp;</th>
                             </tr>
                         </thead>
@@ -45,6 +46,8 @@
                                 </td>
                                 <td>
                                     <a href="/edit/<%= spot.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a>
+                                </td>
+                                <td>
                                     <a href="/delete/<%= spot.id %>" class="btn btn-sm btn-danger"><i class="fas fa-minus-circle"></i> Delete</a>
                                 </td>
                             </tr><% }) %>
