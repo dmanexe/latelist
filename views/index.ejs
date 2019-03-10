@@ -4,8 +4,8 @@
         <div class="col-md-12">
 
             <div class="jumbotron">
-                <h2>What is LateList?</h2>
-                <p>This is a simple Node.js + MySQL app to show beginners how to get started with a simple CRUD application in Node.js.</p>
+                <h1>Hello, world!</h1>
+                <p>This is a simple sample of Node.js &amp; MySQL CRUD for a jumping off point to get into Node.js.</p>
                 <div class="table-wrapper"><% if (spots.length > 0) {%>
                     <table class="table table-hovered">
                         <thead class="thead-dark">
@@ -22,28 +22,35 @@
                         </thead>
                         <tbody><% spots.forEach((spot, index) => { %>
                             <tr>
-                                <th scope="row"><%= spot.id %>
+                                <th scope="row">
+                                    <%= spot.id %>
                                 </th>
                                 <td>
                                     <img src="/assets/img/<%= spot.image %>" class="rounded-circle player-img" alt="">
-                                    </td>
-                                    <td><%= spot.spot_title %>
-                                    </td>
-                                    <td><%= spot.spot_address %>
-                                    </td>
-                                    <td><%= spot.spot_locale %>
-                                    </td>
-                                    <td><%= spot.spot_description %>
-                                    </td>
-                                    <td><a href="https://www.twitter.com/<%= spot.spot_username %>">@<%= spot.spot_username %></a>
-                                    </td>
-                                    <td>
-                                        <a href="/edit/<%= spot.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit
-                                        </a>
-                                        <a href="/delete/<%= spot.id %>" class="btn btn-sm btn-danger">Delete
-                                        </a>
-                                    </td>
-                                </tr><% }) %>
+                                </td>
+                                <td>
+                                    <%= spot.spot_title %>
+                                </td>
+                                <td>
+                                    <%= spot.spot_address %>
+                                </td>
+                                <td>
+                                    <%= spot.spot_locale %>
+                                </td>
+                                <td>
+                                    <%= spot.spot_description %>
+                                </td>
+                                <td>
+                                    <a href="https://www.twitter.com/<%= spot.spot_username %>">@<%= spot.spot_username %></a>
+                                </td>
+                                <td>
+                                    <a href="/edit/<%= spot.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-info">Edit</a>
+                                    <a href="/delete/<%= spot.id %>" class="btn btn-sm btn-danger">Delete</a>
+                                </td>
+                            </tr><% }) %>
+                            <tr>
+                                <td colspan="8"><a href="/add" target="_blank" rel="noopener" class="btn btn-sm btn-success">Add New Spot</a>
+                            </tr>
                             </tbody>
                         </table><% } else { %>
                         <p class="text-center">No spots found. Go 
