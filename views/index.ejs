@@ -7,8 +7,8 @@
                 <h1>Hello, world!</h1>
                 <p>This is a simple sample of Node.js &amp; MySQL CRUD for a jumping off point to get into Node.js.</p>
                 <div class="table-wrapper"><% if (spots.length > 0) {%>
-                    <table class="table table-hovered">
-                        <thead class="thead-dark">
+                    <table class="table table-hovered table-striped table-hover">
+                        <thead>
                             <tr>
                                 <th scope="col">&nbsp;</th>
                                 <th scope="col">Image</th>
@@ -52,7 +52,7 @@
                                 </td>
                             </tr><% }) %>
                             <tr>
-                                <td colspan="8"><a href="/add" target="_blank" rel="noopener" class="btn btn-sm btn-success">Add New Spot</a>
+                                <td colspan="9"><a href="/add" target="_blank" rel="noopener" class="btn btn-sm btn-success"><i class="fas fa-plus-square"></i> New Spot</a>
                             </tr>
                             </tbody>
                         </table><% } else { %>
