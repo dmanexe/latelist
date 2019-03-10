@@ -10,6 +10,8 @@ Go to `/`  and run the following commands.
 	npm build
 	npm install
 
+Add the data from `latelist.sql.zip` to your database for the three sample listings.
+
 # Notes
 Make sure you update `app.js` with your local MySQL settings. The settings in the repo for `MySQL` are default settings for XAMPP/MAMP/WAMP, etc.
 
