@@ -7,12 +7,8 @@ An simple example MySQL + Node.js CRUD app. Hopefully, this sample app can help 
 Includes a `list` page, `/add` page, `/edit` page and `/delete` function.
 
 # Installation
-Clone, go to `/`  and run the typical commands:
-
-	npm build
-	npm install
-
-Add the data from `latelist.sql.zip` to your local database for the three sample listings.
+1. From app root run `npm install`.
+1. Add the data from `latelist.sql.zip` to your local database for the three sample listings.
 
 # Notes
 Make sure you update `app.js` with your local MySQL settings. The settings in the repo for `MySQL` are the default settings for what I believe is XAMPP/MAMP/WAMP, etc.
