@@ -1,6 +1,6 @@
 # About LateList
-Author: Dan Birlem
-Author URL: https://danbirlem.com
+Version: 1.0.0
+Author: https://danbirlem.com
 
 An simple example MySQL + Node.js CRUD app. Hopefully, this sample app can help people trying to learn Node.js with simple MySQL integration.
 
@@ -8,17 +8,14 @@ Includes a `list` page, `/add` page, `/edit` page and `/delete` function.
 
 # Installation
 1. From app root, run `npm install`
-1. Import `latelist.sql.zip` to your local database for the three sample listings
-1. Update `app.js` with your local MySQL settings. The settings in the repo for `MySQL` are the default settings for what I believe is XAMPP/MAMP/WAMP, etc
+1. Import `latelist.sql.zip` to a MySQL database
+1. Update `app.js` for database config
+1. `node app.js` to launch
 
 # Reccommended: forever
 I like to use `forever` to run node servers. You can install with `npm install -g forever`. From the app root, run:
     
     forever start -w ./app.js
-
-Alternatively, if you just want to run the server alone, issue the following command.
-
-    node ./app.js
 
 # Credits
 
