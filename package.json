@@ -2,6 +2,7 @@
   "name": "mysql-crud-app",
   "version": "1.0.0",
   "description": "Sample CRUD app with MySQL and node.js",
+  "homepage": "http://danbirlem.com/latelist",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

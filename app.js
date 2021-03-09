@@ -1,13 +1,13 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
-const mysql = require('mysql');
+const mysql = require('mysql'); // hopefully the last project I will use MySQL with!
 const path = require('path');
-const app = express();
+const app = express(); // using this for the MERN stack, later
 
 const {getHomePage, getContactPage} = require('./routes/index');
 const {addSpotPage, addSpot, deleteSpot, editSpot, editSpotPage, viewSpot} = require('./routes/spot');
-const port = 5000;
+const port = 5000; // change if required
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.

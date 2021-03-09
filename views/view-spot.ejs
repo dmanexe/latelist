@@ -1,8 +1,8 @@
 <% include partials/header.ejs %>
     <div class="container">
-   		<a href="/edit/<%= spot.id %>" class="btn btn-sm btn-info float-right ml-3"><i class="fas fa-edit"></i> Edit</a>
-        <a href="/delete/<%= spot.id %>" class="btn btn-sm btn-danger float-right"><i class="fas fa-minus-circle"></i> Delete</a>
-        <h2><img src="/assets/img/<%= spot.image %>" class="rounded-circle spot-img" alt=""> <%= spot.spot_title %></h2>
+   		<a href="../edit/<%= spot.id %>" class="btn btn-sm btn-info float-right ml-3"><i class="fas fa-edit"></i> Edit</a>
+        <a href="../delete/<%= spot.id %>" class="btn btn-sm btn-danger float-right"><i class="fas fa-minus-circle"></i> Delete</a>
+        <h2><img src="../assets/img/<%= spot.image %>" class="rounded-circle spot-img" alt=""> <%= spot.spot_title %></h2>
 
     	<hr class="col-xs-12">
 

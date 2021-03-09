@@ -4,8 +4,9 @@
         <div class="col-md-12">
 
             <div class="jumbotron mt-3">
-                <h1>Hello, world!</h1>
-                <p>This is a simple sample of Node.js &amp; MySQL CRUD for a jumping off point to get into Node.js.</p>
+                <h1>LateList</h1>
+                <p>View on Github: <a href="https://github.com/dmanexe/latelist">@dmanexe/latelist</a></p>
+                <p>Here's a little working example of a MySQL/Node app I built to learn about Node. It is supposed to include 24-hour locations from around the world. Future features would include city pages, comments, and more.</p>
                 <div class="table-wrapper"><% if (spots.length > 0) {%>
                     <table class="table table-hovered table-striped table-hover">
                         <thead>
@@ -24,10 +25,10 @@
                         <tbody><% spots.forEach((spot, index) => { %>
                             <tr>
                                 <th scope="row">
-                                    <a href="/view/<%= spot.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-primary"><i class="fas fa-info-circle"></i> View
+                                    <a href="view/<%= spot.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-primary"><i class="fas fa-info-circle"></i> View
                                 </th>
                                 <td>
-                                    <img src="/assets/img/<%= spot.image %>" class="rounded-circle spot-img" alt="">
+                                    <img src="assets/img/<%= spot.image %>" class="rounded-circle spot-img" alt="">
                                 </td>
                                 <td>
                                     <%= spot.spot_title %>
@@ -45,19 +46,19 @@
                                     <a href="https://www.twitter.com/<%= spot.spot_username %>">@<%= spot.spot_username %></a>
                                 </td>
                                 <td>
-                                    <a href="/edit/<%= spot.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a>
+                                    <a href="edit/<%= spot.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a>
                                 </td>
                                 <td>
-                                    <a href="/delete/<%= spot.id %>" class="btn btn-sm btn-danger"><i class="fas fa-minus-circle"></i> Delete</a>
+                                    <a href="delete/<%= spot.id %>" class="btn btn-sm btn-danger"><i class="fas fa-minus-circle"></i> Delete</a>
                                 </td>
                             </tr><% }) %>
                             <tr>
-                                <td colspan="9"><a href="/add" target="_blank" rel="noopener" class="btn btn-sm btn-success"><i class="fas fa-plus-square"></i> New Spot</a>
+                                <td colspan="9"><a href="add" target="_blank" rel="noopener" class="btn btn-sm btn-success"><i class="fas fa-plus-square"></i> New Spot</a>
                             </tr>
                             </tbody>
                         </table><% } else { %>
                         <p class="text-center">No spots found. Go 
-                            <a href="/add" >here</a> to add a spot.
+                            <a href="add" >here</a> to add a spot.
                         </p><% } %>
                     </div>
                 </div>
