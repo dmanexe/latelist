@@ -10,6 +10,7 @@ Includes a `list` page, `/add` page, `/edit` page and `/delete` function.
 1. From app root, run `npm install`
 1. Import `latelist.sql.zip` to a MySQL database
 1. Update `app.js` for database config
+1. Update `package.json` with the `homepage` that fits your install
 1. `node app.js` to launch
 
 # Reccommended: forever
